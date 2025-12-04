@@ -33,14 +33,15 @@ function toSnake(camel) {
   console.log(arr);
   const regex = /[A-Z]/;
   arr.forEach((x, i) => {
-    if (!regex.test(x)) {
-    } else {
+    if (regex.test(x)) {
       console.log('Capital: ', x, i);
-      arr.splice(i, 0, '_', x.toLowerCase());
+      arr.splice(i, 1, '_', x.toLowerCase());
     }
   });
   console.log(arr);
-  return arr;
+  const str = arr.join('');
+  console.log(str);
+  return str;
 }
 
 // // At position 2, add "Lemon" and "Kiwi":
